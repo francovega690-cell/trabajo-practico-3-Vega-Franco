@@ -35,7 +35,7 @@ const cargarPersonajesLs = async (id) => {
     contenedor.innerHTML += `
     <div class="card" style="width: 18rem">
       <img
-        src="https://thesimpsonsapi.com${element.portrait_path}"
+        src="https://cdn.thesimpsonsapi.com/500${element.portrait_path}"
         class="card-img-top"
         alt="${element.name}"
       >
