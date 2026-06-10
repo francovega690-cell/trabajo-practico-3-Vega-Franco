@@ -47,6 +47,15 @@ const cargarPersonajesLs = async (id) => {
         <p class="card-text">
               ${element.status}
             </p>
+        <button
+        id="modal"
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop"
+      >
+        Ver mas
+      </button>
       </div>
     </div>
   `;
