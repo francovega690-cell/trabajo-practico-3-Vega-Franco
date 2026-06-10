@@ -12,7 +12,7 @@ const obtenerPersonajesLs = async () => {
     const response = await fetch(apiGeneral);
     const data = await response.json();
 
-    return data.results.slice(0, 10);
+    return data.results.slice(0, 20);
   } catch (error) {
     console.log(error);
   }
@@ -41,6 +41,12 @@ const cargarPersonajesLs = async (id) => {
       >
       <div class="card-body">
         <h5 class="card-title">${element.name}</h5>
+        <p class="card-text">
+             ${element.occupation}
+            </p> 
+        <p class="card-text">
+              ${element.status}
+            </p>
       </div>
     </div>
   `;
