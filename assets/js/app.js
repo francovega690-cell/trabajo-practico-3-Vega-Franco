@@ -6,7 +6,7 @@ let personajes = [];
 const contenedor = document.querySelector("#contenedor");
 const myModal = new bootstrap.Modal("#modal");
 const titleH1 = document.querySelector("#staticBackdropLabel");
-
+const buscador = document.querySelector("#buscador");
 const obtenerPersonajesLs = async () => {
   try {
     const response = await fetch(apiGeneral);
@@ -113,5 +113,23 @@ const cargarPersonajesLs = async (id) => {
   `;
   });
 };
+const mostrarPersonajes = (lista) => {
+  contenedor.innerHTML = "";
 
+  lista.forEach((element) => {
+    contenedor.innerHTML += `
+      <div class="card m-2" style="width: 18rem">
+        <img
+          src="https://cdn.thesimpsonsapi.com/500${element.portrait_path}"
+          class="card-img-top"
+          alt="${element.name}"
+        >
+        <div class="card-body">
+          <h5 class="card-title">${element.name}</h5>
+          <p class="card-text">${element.occupation}</p>
+        </div>
+      </div>
+    `;
+  });
+};
 cargarPersonajesLs();
