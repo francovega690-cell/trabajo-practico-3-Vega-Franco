@@ -47,17 +47,69 @@ const cargarPersonajesLs = async (id) => {
         <p class="card-text">
               ${element.status}
             </p>
-        <button
+            <button
         id="modal"
         type="button"
         class="btn btn-primary"
         data-bs-toggle="modal"
-        data-bs-target="#staticBackdrop"
+        data-bs-target="#modal-${element.id}"
       >
-        Ver mas
+        Ver más
       </button>
       </div>
     </div>
+    <div
+        class="modal fade"
+        id="modal-${element.id}"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="${element.id}">
+                ${element.name}
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <div class="modal-body">
+               
+               <img src="https://cdn.thesimpsonsapi.com/500${element.portrait_path}"
+                class="img-fluid mb-3"
+                alt="${element.name}"
+               >
+
+              <p><strong>Nombre:</strong> ${element.name}</p>
+              <p><strong>Edad:</strong> ${element.age}</p>
+              <p><strong>Género:</strong> ${element.gender}</p>
+              <p><strong>Ocupación:</strong> ${element.occupation}</p>
+              <p><strong>Estado:</strong> ${element.status}</p>
+              <p><strong>Frases:</strong> ${element.phrases}</p>
+             
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
   `;
   });
 };
